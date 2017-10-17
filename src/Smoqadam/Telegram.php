@@ -239,9 +239,7 @@ class Telegram {
           //error_log(print_r($jsonObject, true));
 
           // remove unwanted array elements
-          $output = end($jsonObject);
-
-          $result = is_array($output) ? end($output) : $output;
+          $result = $output['result'];
           if ( ! empty($result)) {
               // convert to object
               return json_decode(json_encode($result));
